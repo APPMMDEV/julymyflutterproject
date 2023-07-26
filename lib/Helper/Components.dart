@@ -187,14 +187,16 @@ class Components {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Container(
-                    width: 100,
-                    child: Text(
-                      data.mmtitle,
-                      style: TextStyle(
-                          fontSize: 12,
-                          color: Theme.of(context).colorScheme.secondary),
-                      maxLines: 1,
+                  Expanded(
+                    child: Container(
+                      width: 100,
+                      child: Text(
+                        data.mmtitle,
+                        style: TextStyle(
+                            fontSize: 12,
+                            color: Theme.of(context).colorScheme.secondary),
+                        maxLines: 1,
+                      ),
                     ),
                   ),
                   Container(width: 100, child: Image.network(data.musicImg)),

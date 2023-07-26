@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:myflutterproject/Pages/ProfilePage.dart';
-import 'package:myflutterproject/Pages/lyricspage.dart';
 import 'package:myflutterproject/Pages/musicPage.dart';
 import 'package:myflutterproject/Pages/postPage.dart';
 import 'package:myflutterproject/theme/dark_theme.dart';
-import 'Helper/ConstsData.dart';
+import 'Pages/chooseLanguage.dart';
 import 'theme/light_theme.dart';
 
 void main() {
@@ -20,7 +19,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   int currentIndex = 0;
-  final screens = [MyPostPage(), LyricsPage(), musicPage(), MyProfile()];
+  final screens = [chooseLanguage(), musicPage(), MyProfile()];
 
   bool _switch = false;
   ThemeData _dark = darkTheme;
@@ -65,10 +64,6 @@ class _MyAppState extends State<MyApp> {
               BottomNavigationBarItem(
                 icon: Icon(Icons.home),
                 label: 'Home',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.lyrics),
-                label: 'Lyrics',
               ),
               BottomNavigationBarItem(
                 icon: Icon(Icons.library_music),

@@ -1,4 +1,6 @@
+
 import 'package:flutter/material.dart';
+import 'package:flutter_swiper_view/flutter_swiper_view.dart';
 import 'package:myflutterproject/Modal/datamodel.dart';
 
 import '../Api/Api.dart';
@@ -18,6 +20,7 @@ class _MyPostPageState extends State<MyPostPage> {
 
   List<PostDatabase>myPost = [];
 
+  late PostDatabase postDatabase ;
 
 
 
@@ -30,13 +33,20 @@ class _MyPostPageState extends State<MyPostPage> {
 
         if(snapshot.hasData){
 
-          return ListView.builder(
-              itemCount: snapshot.data!.length,
-              itemBuilder:(context,index){
-                return Components.getPostCardContainer2(
+          
 
-                    context, snapshot.data![index]);
-              });
+          return SingleChildScrollView(
+            child: Expanded(
+              child: ListView.builder(
+                  itemCount: snapshot.data!.length,
+                  
+                  itemBuilder:(context,index){
+                    return Components.getPostCardContainer2(
+                      
+                        context, snapshot.data![index]);
+                  }),
+            ),
+          );
         }else{
 
           return Center(
@@ -47,5 +57,10 @@ class _MyPostPageState extends State<MyPostPage> {
         }
       },
     );
+  }
+
+  Widget myimg (PostDatabase postDatabase){
+
+    return Image.network(postDatabase.image);
   }
 }

@@ -8,8 +8,6 @@ import 'package:http/http.dart' as http;
 
 import '../Modal/musicModal.dart';
 
-// import '../Music/musicModal.dart';
-
 class Api {
   static Future<List<LyricsDatabase>> getMyLyric() async {
     Uri uri = Uri.parse(ConstsData.LyricApi);
