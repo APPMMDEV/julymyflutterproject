@@ -55,6 +55,7 @@ class _MyAppState extends State<MyApp> {
           ),
           body: screens[currentIndex],
           bottomNavigationBar: BottomNavigationBar(
+            elevation: 0,
             backgroundColor:
                 Theme.of(context).bottomNavigationBarTheme.backgroundColor,
             currentIndex: currentIndex,
