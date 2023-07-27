@@ -14,7 +14,7 @@ ThemeData darkTheme = ThemeData(
     ),
     colorScheme: ColorScheme.dark(
         background: Colors.transparent,
-        primary: Colors.black,
-        onPrimary: const Color.fromARGB(96, 114, 111, 111),
+        onPrimary: Colors.black,
+        primary: const Color.fromARGB(96, 114, 111, 111),
         secondary: Colors.white,
         onSecondary: Color.fromARGB(255, 106, 112, 112)));

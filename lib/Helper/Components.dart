@@ -19,7 +19,7 @@ class Components {
         margin: EdgeInsets.symmetric(vertical: 5),
         child: Center(
           child: Container(
-            height: 130,
+            height: 135,
             child: Card(
               margin: EdgeInsets.symmetric(horizontal: 10),
               color: Theme.of(context).colorScheme.onPrimary,
