@@ -20,6 +20,7 @@ class ConstsData {
   }
 
   static const myprimarycolor = Color(0xFFF17006);
-  static const mysecondarycolor = Color(0xFF04212F);
-  static const mythirdarycolor = Color(0xFFF04239);
+  static const mysecondarycolor = Color.fromARGB(255, 30, 51, 90);
+  static const mycardcolor = Color.fromARGB(255, 4, 79, 122);
+  static const mythirdarycolor = Color.fromARGB(255, 238, 255, 0);
 }

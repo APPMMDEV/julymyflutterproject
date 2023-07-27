@@ -19,10 +19,10 @@ class _musicPlayState extends State<musicPlay> {
   Duration duration = Duration.zero;
   Duration position = Duration.zero;
 
-  
   @override
   void initState() {
     // TODO: implement initState
+
     audioPlayer.onPlayerStateChanged.listen((event) {
       setState(() {
         isPlaying = event == PlayerState.playing;
@@ -41,29 +41,23 @@ class _musicPlayState extends State<musicPlay> {
       });
     });
 
-    if(isPlaying){
-
-      audioPlayer.dispose();
+    if (isPlaying) {
+      setState(() {
+        audioPlayer.dispose();
+      });
     }
-
 
     setAudio();
     super.initState();
   }
 
-
   Future setAudio() async {
-
     audioPlayer.stop();
     audioPlayer.setReleaseMode(ReleaseMode.stop);
     var url = widget.musicDatabase.path;
     var source = UrlSource(url);
 
-
- await audioPlayer.play(source);
-
-  
-
+    await audioPlayer.play(source);
   }
 
   @override
@@ -78,7 +72,10 @@ class _musicPlayState extends State<musicPlay> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.musicDatabase.mmtitle,style: TextStyle(fontSize: 12),),
+        title: Text(
+          widget.musicDatabase.mmtitle,
+          style: TextStyle(fontSize: 12),
+        ),
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -130,11 +127,13 @@ class _musicPlayState extends State<musicPlay> {
                 ),
               ),
               CircleAvatar(
-                backgroundColor: Theme.of(context).colorScheme.primary,
+                  backgroundColor: Theme.of(context).colorScheme.primary,
                   radius: 35,
                   child: IconButton(
-
-                    icon: Icon(isPlaying ? Icons.pause : Icons.play_arrow,color: Theme.of(context).colorScheme.secondary,),
+                    icon: Icon(
+                      isPlaying ? Icons.pause : Icons.play_arrow,
+                      color: Theme.of(context).colorScheme.secondary,
+                    ),
                     iconSize: 50,
                     onPressed: () async {
                       if (isPlaying) {

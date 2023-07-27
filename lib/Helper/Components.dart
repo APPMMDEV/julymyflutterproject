@@ -4,6 +4,7 @@ import 'package:myflutterproject/Modal/datamodel.dart';
 import 'package:myflutterproject/Pages/LyricDetail.dart';
 import 'package:myflutterproject/Modal/lyricmodel.dart';
 import 'package:myflutterproject/Pages/myPostDetail.dart';
+import 'package:myflutterproject/Pages/readPost.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../Modal/musicModal.dart';
@@ -18,11 +19,12 @@ class Components {
         margin: EdgeInsets.symmetric(vertical: 5),
         child: Center(
           child: Container(
-            height: 160,
+            height: 130,
             child: Card(
-              color: Theme.of(context).colorScheme.primary,
-              elevation: 10,
-              shadowColor: ConstsData.mythirdarycolor,
+              margin: EdgeInsets.symmetric(horizontal: 10),
+              color: Theme.of(context).colorScheme.onPrimary,
+              elevation: 5,
+              shadowColor: Theme.of(context).colorScheme.onSecondary,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20)),
               child: Container(
@@ -34,7 +36,7 @@ class Components {
 
                     Navigator.of(context).push(MaterialPageRoute(
                         builder: (context) =>
-                            myPostDetail(postData: postData)));
+                            viewPost(postDatabase: postData)));
                   },
                   child: Container(
                     margin: const EdgeInsets.symmetric(horizontal: 5),
@@ -109,9 +111,9 @@ class Components {
         padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
         child: Card(
           margin: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
-          color: Theme.of(context).colorScheme.primary,
+          color: Theme.of(context).colorScheme.onPrimary,
           elevation: 5,
-          shadowColor: Colors.redAccent,
+          shadowColor: Theme.of(context).colorScheme.onSecondary,
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
           child: Container(
@@ -169,12 +171,10 @@ class Components {
         height: 100,
         padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
         child: Card(
-
-
           margin: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
           color: Theme.of(context).colorScheme.primary,
           elevation: 5,
-          shadowColor: Colors.redAccent,
+          shadowColor: Theme.of(context).colorScheme.onPrimary,
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
           child: Container(

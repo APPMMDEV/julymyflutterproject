@@ -19,7 +19,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   int currentIndex = 0;
-  final screens = [chooseLanguage(), musicPage(), MyProfile()];
+  final screens = [MyPostPage(), musicPage(), MyProfile()];
 
   bool _switch = false;
   ThemeData _dark = darkTheme;
@@ -33,7 +33,7 @@ class _MyAppState extends State<MyApp> {
       home: Scaffold(
           appBar: AppBar(
             title: Text('MCoder Blog'),
-            centerTitle: true,
+            elevation: 0,
             actions: [
               Container(
                 margin: EdgeInsets.only(right: 20),
@@ -56,7 +56,7 @@ class _MyAppState extends State<MyApp> {
           body: screens[currentIndex],
           bottomNavigationBar: BottomNavigationBar(
             backgroundColor:
-            Theme.of(context).bottomNavigationBarTheme.backgroundColor,
+                Theme.of(context).bottomNavigationBarTheme.backgroundColor,
             currentIndex: currentIndex,
             type: BottomNavigationBarType.fixed,
             onTap: (index) => setState(() => currentIndex = index),
